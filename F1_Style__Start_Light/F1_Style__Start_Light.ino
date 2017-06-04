@@ -21,6 +21,7 @@ void setup() {
   strip.show(); // Initialize all pixels to 'off'
   // Start up serial monitor
   Serial.begin(9600);
+  Serial.println("Ready to receive.");
 }
 
 void loop()
@@ -28,27 +29,27 @@ void loop()
   recvWithStartEndMarkers();
   if (newData == true)
   {
-    if (strcmp(receivedChars, "$00-005") == 0)
+    if (strcmp(receivedChars, "@301") == 0)
     {
       lightClusterOne();
       newData = false;
     }
-    else if (strcmp(receivedChars, "$00-004") == 0)
+    else if (strcmp(receivedChars, "@311") == 0)
     {
       lightClusterTwo();
       newData = false;
     }
-    else if (strcmp(receivedChars, "$00-003") == 0)
+    else if (strcmp(receivedChars, "@321") == 0)
     {
       lightClusterThree();
       newData = false;
     }
-    else if (strcmp(receivedChars, "$00-002") == 0)
+    else if (strcmp(receivedChars, "@331") == 0)
     {
       lightClusterFour();
       newData = false;
     }
-    else if (strcmp(receivedChars, "$00-001") == 0)
+    else if (strcmp(receivedChars, "@341") == 0)
     {
       lightClusterFive();
       newData = false;

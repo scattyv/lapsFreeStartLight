@@ -9,9 +9,9 @@
 //   NEO_KHZ400  400 KHz (classic 'v1' (not v2) FLORA pixels, WS2811 drivers)
 //   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)
 //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(32, PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(38, PIN, NEO_GRB + NEO_KHZ800);
 
-const byte numChars = 32;
+const byte numChars = 10;
 char receivedChars[numChars];
 boolean newData = false;
 
@@ -21,7 +21,7 @@ void setup() {
   strip.show(); // Initialize all pixels to 'off'
   // Start up serial monitor
   Serial.begin(9600);
-  Serial.println("Ready to receive.");
+  //  Serial.println("Ready to receive.");
 }
 
 void loop()
@@ -67,7 +67,7 @@ void recvWithStartEndMarkers() {
   static boolean recvInProgress = false;
   static byte ndx = 0;
   char startMarker = '#';
-  char endMarker = '.';
+  char endMarker = '\r';
   char rc;
 
   while (Serial.available() > 0 && newData == false) {
@@ -97,186 +97,42 @@ void recvWithStartEndMarkers() {
 
 
 void lightClusterOne() {
-  strip.setPixelColor(0, 255, 0, 0);
-  strip.setPixelColor(1, 255, 0, 0);
-  strip.setPixelColor(2, 255, 0, 0);
-  strip.setPixelColor(3, 255, 0, 0);
-  strip.setPixelColor(4, 255, 0, 0);
-  strip.setPixelColor(5, 255, 0, 0);
-  strip.setPixelColor(6, 255, 0, 0);
-  strip.setPixelColor(7, 255, 0, 0);
-  strip.show();
+  for (uint16_t i = 0; i < 8; i++) {
+    strip.setPixelColor(i, 255, 0, 0);
+    strip.show();
+  }
 }
 
 void lightClusterTwo() {
-  strip.setPixelColor(0, 255, 0, 0);
-  strip.setPixelColor(1, 255, 0, 0);
-  strip.setPixelColor(2, 255, 0, 0);
-  strip.setPixelColor(3, 255, 0, 0);
-  strip.setPixelColor(4, 255, 0, 0);
-  strip.setPixelColor(5, 255, 0, 0);
-  strip.setPixelColor(6, 255, 0, 0);
-  strip.setPixelColor(7, 255, 0, 0);
-  strip.setPixelColor(8, 255, 0, 0);
-  strip.setPixelColor(9, 255, 0, 0);
-  strip.setPixelColor(10, 255, 0, 0);
-  strip.setPixelColor(11, 255, 0, 0);
-  strip.setPixelColor(12, 255, 0, 0);
-  strip.setPixelColor(13, 255, 0, 0);
-  strip.setPixelColor(14, 255, 0, 0);
-  strip.setPixelColor(15, 255, 0, 0);
-  strip.show();
+  for (uint16_t i = 0; i < 16; i++) {
+    strip.setPixelColor(i, 255, 0, 0);
+    strip.show();
+  }
 }
 
 void lightClusterThree() {
-  strip.setPixelColor(0, 255, 0, 0);
-  strip.setPixelColor(1, 255, 0, 0);
-  strip.setPixelColor(2, 255, 0, 0);
-  strip.setPixelColor(3, 255, 0, 0);
-  strip.setPixelColor(4, 255, 0, 0);
-  strip.setPixelColor(5, 255, 0, 0);
-  strip.setPixelColor(6, 255, 0, 0);
-  strip.setPixelColor(7, 255, 0, 0);
-  strip.setPixelColor(8, 255, 0, 0);
-  strip.setPixelColor(9, 255, 0, 0);
-  strip.setPixelColor(10, 255, 0, 0);
-  strip.setPixelColor(11, 255, 0, 0);
-  strip.setPixelColor(12, 255, 0, 0);
-  strip.setPixelColor(13, 255, 0, 0);
-  strip.setPixelColor(14, 255, 0, 0);
-  strip.setPixelColor(15, 255, 0, 0);
-  strip.setPixelColor(16, 255, 0, 0);
-  strip.setPixelColor(17, 255, 0, 0);
-  strip.setPixelColor(18, 255, 0, 0);
-  strip.setPixelColor(19, 255, 0, 0);
-  strip.setPixelColor(20, 255, 0, 0);
-  strip.setPixelColor(21, 255, 0, 0);
-  strip.setPixelColor(22, 255, 0, 0);
-  strip.setPixelColor(23, 255, 0, 0);
-  strip.show();
+  for (uint16_t i = 0; i < 24; i++) {
+    strip.setPixelColor(i, 255, 0, 0);
+    strip.show();
+  }
 }
 
 void lightClusterFour() {
-  strip.setPixelColor(0, 255, 0, 0);
-  strip.setPixelColor(1, 255, 0, 0);
-  strip.setPixelColor(2, 255, 0, 0);
-  strip.setPixelColor(3, 255, 0, 0);
-  strip.setPixelColor(4, 255, 0, 0);
-  strip.setPixelColor(5, 255, 0, 0);
-  strip.setPixelColor(6, 255, 0, 0);
-  strip.setPixelColor(7, 255, 0, 0);
-  strip.setPixelColor(8, 255, 0, 0);
-  strip.setPixelColor(9, 255, 0, 0);
-  strip.setPixelColor(10, 255, 0, 0);
-  strip.setPixelColor(11, 255, 0, 0);
-  strip.setPixelColor(12, 255, 0, 0);
-  strip.setPixelColor(13, 255, 0, 0);
-  strip.setPixelColor(14, 255, 0, 0);
-  strip.setPixelColor(15, 255, 0, 0);
-  strip.setPixelColor(16, 255, 0, 0);
-  strip.setPixelColor(17, 255, 0, 0);
-  strip.setPixelColor(18, 255, 0, 0);
-  strip.setPixelColor(19, 255, 0, 0);
-  strip.setPixelColor(20, 255, 0, 0);
-  strip.setPixelColor(21, 255, 0, 0);
-  strip.setPixelColor(22, 255, 0, 0);
-  strip.setPixelColor(23, 255, 0, 0);
-  strip.setPixelColor(24, 255, 0, 0);
-  strip.setPixelColor(25, 255, 0, 0);
-  strip.setPixelColor(26, 255, 0, 0);
-  strip.setPixelColor(27, 255, 0, 0);
-  strip.setPixelColor(28, 255, 0, 0);
-  strip.setPixelColor(29, 255, 0, 0);
-  strip.setPixelColor(30, 255, 0, 0);
-  strip.setPixelColor(31, 255, 0, 0);
-  strip.show();
+  for (uint16_t i = 0; i < 32; i++) {
+    strip.setPixelColor(i, 255, 0, 0);
+    strip.show();
+  }
 }
 
 void lightClusterFive() {
-  strip.setPixelColor(0, 255, 0, 0);
-  strip.setPixelColor(1, 255, 0, 0);
-  strip.setPixelColor(2, 255, 0, 0);
-  strip.setPixelColor(3, 255, 0, 0);
-  strip.setPixelColor(4, 255, 0, 0);
-  strip.setPixelColor(5, 255, 0, 0);
-  strip.setPixelColor(6, 255, 0, 0);
-  strip.setPixelColor(7, 255, 0, 0);
-  strip.setPixelColor(8, 255, 0, 0);
-  strip.setPixelColor(9, 255, 0, 0);
-  strip.setPixelColor(10, 255, 0, 0);
-  strip.setPixelColor(11, 255, 0, 0);
-  strip.setPixelColor(12, 255, 0, 0);
-  strip.setPixelColor(13, 255, 0, 0);
-  strip.setPixelColor(14, 255, 0, 0);
-  strip.setPixelColor(15, 255, 0, 0);
-  strip.setPixelColor(16, 255, 0, 0);
-  strip.setPixelColor(17, 255, 0, 0);
-  strip.setPixelColor(18, 255, 0, 0);
-  strip.setPixelColor(19, 255, 0, 0);
-  strip.setPixelColor(20, 255, 0, 0);
-  strip.setPixelColor(21, 255, 0, 0);
-  strip.setPixelColor(22, 255, 0, 0);
-  strip.setPixelColor(23, 255, 0, 0);
-  strip.setPixelColor(24, 255, 0, 0);
-  strip.setPixelColor(25, 255, 0, 0);
-  strip.setPixelColor(26, 255, 0, 0);
-  strip.setPixelColor(27, 255, 0, 0);
-  strip.setPixelColor(28, 255, 0, 0);
-  strip.setPixelColor(29, 255, 0, 0);
-  strip.setPixelColor(30, 255, 0, 0);
-  strip.setPixelColor(31, 255, 0, 0);
-  strip.setPixelColor(32, 255, 0, 0);
-  strip.setPixelColor(33, 255, 0, 0);
-  strip.setPixelColor(34, 255, 0, 0);
-  strip.setPixelColor(35, 255, 0, 0);
-  strip.setPixelColor(36, 255, 0, 0);
-  strip.setPixelColor(37, 255, 0, 0);
-  strip.setPixelColor(38, 255, 0, 0);
-  strip.setPixelColor(39, 255, 0, 0);
-  strip.show();
+  for (uint16_t i = 0; i < 38; i++) {
+    strip.setPixelColor(i, 255, 0, 0);
+    strip.show();
+  }
 }
 
 void lightsOut() {
-  strip.setPixelColor(0, 0, 0, 0);
-  strip.setPixelColor(1, 0, 0, 0);
-  strip.setPixelColor(2, 0, 0, 0);
-  strip.setPixelColor(3, 0, 0, 0);
-  strip.setPixelColor(4, 0, 0, 0);
-  strip.setPixelColor(5, 0, 0, 0);
-  strip.setPixelColor(6, 0, 0, 0);
-  strip.setPixelColor(7, 0, 0, 0);
-  strip.setPixelColor(8, 0, 0, 0);
-  strip.setPixelColor(9, 0, 0, 0);
-  strip.setPixelColor(10, 0, 0, 0);
-  strip.setPixelColor(11, 0, 0, 0);
-  strip.setPixelColor(12, 0, 0, 0);
-  strip.setPixelColor(13, 0, 0, 0);
-  strip.setPixelColor(14, 0, 0, 0);
-  strip.setPixelColor(15, 0, 0, 0);
-  strip.setPixelColor(16, 0, 0, 0);
-  strip.setPixelColor(17, 0, 0, 0);
-  strip.setPixelColor(18, 0, 0, 0);
-  strip.setPixelColor(19, 0, 0, 0);
-  strip.setPixelColor(20, 0, 0, 0);
-  strip.setPixelColor(21, 0, 0, 0);
-  strip.setPixelColor(22, 0, 0, 0);
-  strip.setPixelColor(23, 0, 0, 0);
-  strip.setPixelColor(24, 0, 0, 0);
-  strip.setPixelColor(25, 0, 0, 0);
-  strip.setPixelColor(26, 0, 0, 0);
-  strip.setPixelColor(27, 0, 0, 0);
-  strip.setPixelColor(28, 0, 0, 0);
-  strip.setPixelColor(29, 0, 0, 0);
-  strip.setPixelColor(30, 0, 0, 0);
-  strip.setPixelColor(31, 0, 0, 0);
-  strip.setPixelColor(32, 0, 0, 0);
-  strip.setPixelColor(33, 0, 0, 0);
-  strip.setPixelColor(34, 0, 0, 0);
-  strip.setPixelColor(35, 0, 0, 0);
-  strip.setPixelColor(36, 0, 0, 0);
-  strip.setPixelColor(37, 0, 0, 0);
-  strip.setPixelColor(38, 0, 0, 0);
-  strip.setPixelColor(39, 0, 0, 0);
+  strip.clear();
   strip.show();
 }
 

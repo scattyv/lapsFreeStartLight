@@ -8,7 +8,7 @@ void setup() {
   strip.begin();
   strip.show();
   randomSeed(analogRead(0));
-  Serial.begin(9600);
+//  Serial.begin(9600);
   pinMode(2, INPUT_PULLUP);
   pinMode(13, OUTPUT);
 
@@ -18,7 +18,7 @@ void loop() {
   //read the pushbutton value into a variable
   int sensorVal = digitalRead(2);
   //print out the value of the pushbutton
-  Serial.println(sensorVal);
+//  Serial.println(sensorVal);
   if (sensorVal == HIGH) {
     digitalWrite(13, LOW);
 
@@ -28,7 +28,7 @@ void loop() {
     lightSequence();
     randNumber = random(1500);  //Generatea random number form 0-1500 for delay befor lights out.
     delay(randNumber);
-    Serial.print(randNumber);
+//    Serial.print(randNumber);
     strip.clear();
     strip.show();
   }

@@ -59,7 +59,7 @@ void foo() {
     delay(125);
     Serial.print(i);
   }
-  for (uint16_t i = 32; i < 38; i++) {
+  for (uint16_t i = 32; i < 39; i++) {
     strip.setPixelColor(i, 255, 0, 0);
     strip.show();
     delay(166);

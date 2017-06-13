@@ -25,7 +25,7 @@ void loop() {
 
   } else {
     digitalWrite(13, HIGH);
-    foo();
+    lightSequence();
     randNumber = random(1500);  //Generatea random number form 0-1500 for delay befor lights out.
     delay(randNumber);
     Serial.print(randNumber);
@@ -34,7 +34,7 @@ void loop() {
   }
 }
 
-void foo() {
+void lightSequence() {
   for (uint16_t i = 0; i < 8; i++) {
     strip.setPixelColor(i, 255, 0, 0);
     strip.show();

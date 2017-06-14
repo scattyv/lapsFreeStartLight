@@ -29,27 +29,27 @@ void loop()
   recvWithStartEndMarkers();
   if (newData == true)
   {
-    if (strcmp(receivedChars, "@301") == 0)
+    if (strcmp(receivedChars, "@311") == 0)
     {
       lightClusterOne();
       newData = false;
     }
-    else if (strcmp(receivedChars, "@311") == 0)
+    else if (strcmp(receivedChars, "@321") == 0)
     {
       lightClusterTwo();
       newData = false;
     }
-    else if (strcmp(receivedChars, "@321") == 0)
+    else if (strcmp(receivedChars, "@331") == 0)
     {
       lightClusterThree();
       newData = false;
     }
-    else if (strcmp(receivedChars, "@331") == 0)
+    else if (strcmp(receivedChars, "@341") == 0)
     {
       lightClusterFour();
       newData = false;
     }
-    else if (strcmp(receivedChars, "@341") == 0)
+    else if (strcmp(receivedChars, "$00-000") == 0)
     {
       lightClusterFive();
       newData = false;
